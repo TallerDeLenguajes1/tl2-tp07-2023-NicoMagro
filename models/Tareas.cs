@@ -9,22 +9,19 @@ namespace TP7
     }
     public class Tarea
     {
-        private int id;
-        private string titulo;
-        private string descripcion;
-        private estados estado;
-
-        public int Id { get => id; set => id = value; }
-        public string Titulo { get => titulo; set => titulo = value; }
-        public string Descripcion { get => descripcion; set => descripcion = value; }
-        public estados Estado { get => estado; set => estado = value; }
+        public int Id { get; set; }
+        public string Titulo { get; set; }
+        public string Descripcion { get; set; }
+        public estados Estado { get; set; }
 
         public Tarea(int id, string titulo, string descripcion, estados estado)
         {
-            this.Id = id;
-            this.Titulo = titulo;
-            this.Descripcion = descripcion;
-            this.Estado = estado;
+            Id = id;
+            Titulo = titulo;
+            Descripcion = descripcion;
+            Estado = estado;
         }
     }
+    //hemos utilizado propiedades auto-implementadas, lo que significa que el compilador genera automáticamente los campos privados y los métodos de acceso
+    //Esto reduce la cantidad de código que debes escribir y hace que la clase sea más legible.
 }

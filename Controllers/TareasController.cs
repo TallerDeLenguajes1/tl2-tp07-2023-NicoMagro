@@ -17,7 +17,7 @@ namespace TP7
         }
 
         [HttpPost("AddTarea")]
-        public IActionResult AddTarea(Tarea t)
+        public IActionResult AddTarea([FromBody] Tarea t)
         {
             if (this.manejo.TareaPorId(t.Id) != null)
             {
@@ -31,7 +31,7 @@ namespace TP7
         }
 
         [HttpGet]
-        [Route("BuscarTareaPorId")]
+        [Route("BuscarTareaPorId/{id}")]
         public IActionResult BuscarTarea(int id)
         {
             Tarea t = this.manejo.TareaPorId(id);
@@ -47,7 +47,7 @@ namespace TP7
         }
 
         [HttpPut]
-        [Route("actualizartarea/{id}")]
+        [Route("actualizartarea")]
         public IActionResult ActualizarTarea([FromBody] Tarea tarea)
         {
             if (manejo.ActualizarTarea(tarea))
