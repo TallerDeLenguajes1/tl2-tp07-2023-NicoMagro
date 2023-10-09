@@ -3,11 +3,9 @@ namespace TP7
     using System.Text.Json;
     public class AccesoADatosTareaJSON
     {
-        public string ruta = "tareas.json";
-
         public List<Tarea> LeerTarea()
         {
-            string archivo = File.ReadAllText(ruta);
+            string archivo = File.ReadAllText("models/tareas.json");
             List<Tarea> Tareas = JsonSerializer.Deserialize<List<Tarea>>(archivo);
             return Tareas;
         }
@@ -17,7 +15,7 @@ namespace TP7
             if (Tareas != null)
             {
                 string archivo = JsonSerializer.Serialize(Tareas);
-                File.WriteAllText(ruta, archivo);
+                File.WriteAllText("models/tareas.json", archivo);
 
                 return true;
             }
